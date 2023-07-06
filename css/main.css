@@ -14,7 +14,7 @@ img {
 }
 
 body {
-    background-image: url('../img/background.png');
+    background-image: url('../img/background-mobile.png');
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -113,7 +113,6 @@ body {
 
 header {
     width: 100%;
-    height: 50px;
     background: var(--background);
 }
 
@@ -138,11 +137,22 @@ header .menu-list {
 }
 
 
-.menu-item:hover {
+.item-hover:hover {
     border-bottom: 1px solid #fff;
 }
 
-
+.menu-item button{
+    width: 150px;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+}
 /*Animacio vistas*/
 
 .container-views {
@@ -155,7 +165,6 @@ header .menu-list {
 
 .view-item {
     width: 100%;
-    /* background: rgb(15, 19, 36);*/
     height: 100%;
     color: rgb(255, 255, 255);
     letter-spacing: 2px;
@@ -180,6 +189,8 @@ header .menu-list {
 .info-container p {
     letter-spacing: 2px;
     text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .info-container p b {
@@ -210,7 +221,8 @@ header .menu-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    overflow-y: auto;
 }
 
 
@@ -376,7 +388,7 @@ header .menu-list {
 /*estilos para contactos*/
 
 .ct-title h3{
-    padding-bottom: 30px;
+    padding: 30px;
 }
 
 .ct-form form {
@@ -414,7 +426,7 @@ header .menu-list {
    resize: none;
 }
 .ct-form-item-block button{
-    width: 40%;
+    width: 42%;
     margin: 10px;
     text-align: center;
     padding: 10px 20px;
@@ -448,4 +460,9 @@ header .menu-list {
     margin: 10px;
 }
 
+@media screen and (min-width: 900px) {
+    body {
+        background-image: url('../img/background.png');
+    }
+  }
 
