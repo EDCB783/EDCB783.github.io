@@ -66,7 +66,7 @@ document.getElementById("contact-form").addEventListener("submit", (e) => {
     let email = $.querySelector("#input-email").value;
     let description = $.querySelector("#input-description").value;
 
-    fetch("../config/contact.php", {
+    fetch("./config/contact.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
@@ -74,7 +74,7 @@ document.getElementById("contact-form").addEventListener("submit", (e) => {
         body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&description=${encodeURIComponent(description)}`
       })
         .then(function (response) {
-          console.log(response)
+          alert("Correo enviado con exito")
         })
         .catch(function (error) {
             console.log(error)
