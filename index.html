@@ -163,7 +163,7 @@
                     <h3>¡Prepárate para presenciar la transformación de ideas en un código épico! </h3>
                 </div>
                 <div class="ct-form">
-                    <form id="contact-form">
+                    <form id="contact-form" method="POST">
                         <div class="ct-form-item-block">
                             <label for="">Nombre</label>
                             <input type="text" id="input-name">
@@ -190,8 +190,24 @@
                             </a>
                         </div>
                     </form>
+                    <p id="my-form-status"></p>
                 </div>
             </article>
+
+
+            <article class="view-item">
+                <form id="my-form" action="https://formspree.io/f/xzblbdda" method="POST">
+                     <label>Email:</label>
+                    <input type="text" name="Nombre" id="mf-name"/>
+                    <label>Email:</label>
+                    <input type="email" name="Correo" id="mf-email" />
+                    <label>Message:</label>
+                    <input type="text" name="Mensaje" id="mf-msg"/>
+                    <button id="my-form-button">Submit</button>
+                    <p id="my-form-status"></p>
+                  </form>
+            </article>
+            
         </div>
     </div>
     <script src="./js/main.js"></script>

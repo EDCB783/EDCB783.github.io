@@ -57,6 +57,9 @@ document.getElementById("btn-contact").addEventListener("click", () => {
 
 CTRL_ANIMATION(views.HOME);
 
+
+var form = document.getElementById("my-form");
+
 document.getElementById("contact-form").addEventListener("submit", (e) => {
   e.preventDefault();
   let btnSubmiter = e.submitter.id;
@@ -66,21 +69,17 @@ document.getElementById("contact-form").addEventListener("submit", (e) => {
     let email = $.querySelector("#input-email").value;
     let description = $.querySelector("#input-description").value;
 
-    fetch("../config/contact.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&description=${encodeURIComponent(description)}`
-      })
-        .then(function (response) {
-          console.log(response)
-        })
-        .catch(function (error) {
-            console.log(error)
-        });
-
-    $.reset();
+    if(name != "" && email != "" && description != ""){
+      document.getElementById("mf-name").value = name;
+      document.getElementById("mf-email").value = email;
+      document.getElementById("mf-msg").value = description;
+      form.submit();
+      $.reset();
+    }
+    else{
+      alert("llene todos los campos")
+    }
+  
   }
   if (btnSubmiter == "btn-download") {
     fetch("../CV_Elmer_Cedillos.pdf")
@@ -97,3 +96,39 @@ document.getElementById("contact-form").addEventListener("submit", (e) => {
       });
   }
 });
+
+
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+  var status = document.getElementById("my-form-status");
+  var data = new FormData(event.target);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open(form.method, event.target.action);
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        status.innerHTML = "Thanks for your submission!";
+        form.reset();
+      } else {
+        var responseData = JSON.parse(xhr.responseText);
+        if (responseData.hasOwnProperty('errors')) {
+          status.innerHTML = responseData.errors.map(error => error.message).join(", ");
+        } else {
+          status.innerHTML = "Oops! There was a problem submitting your form";
+        }
+      }
+    }
+  };
+
+  xhr.onerror = function () {
+    status.innerHTML = "Oops! There was a problem submitting your form";
+  };
+
+  xhr.send(data);
+}
+
+form.addEventListener("submit", handleSubmit);
