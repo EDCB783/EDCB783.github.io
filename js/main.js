@@ -79,7 +79,6 @@ document.getElementById("contact-form").addEventListener("submit", (e) => {
     else{
       alert("llene todos los campos")
     }
-  
   }
   if (btnSubmiter == "btn-download") {
     fetch("../CV_Elmer_Cedillos.pdf")
