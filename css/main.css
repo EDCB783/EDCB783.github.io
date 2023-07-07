@@ -213,7 +213,6 @@ header .menu-list {
     gap: 20px 5px;
     overflow-y: auto;
     flex-direction: row;
-    align-content: center;
     justify-content: center;
 }
 
@@ -463,6 +462,10 @@ header .menu-list {
 @media screen and (min-width: 900px) {
     body {
         background-image: url('../img/background.png');
+    }
+
+    .proyects {
+        align-content: center;
     }
   }
 
