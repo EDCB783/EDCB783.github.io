@@ -63,13 +63,12 @@ body {
 .loading-barr {
     border: 1px solid rgba(4, 105, 136, 0.767);
     box-shadow: 0 0 10px 0 rgb(0, 195, 255);
-    ;
     width: 80%;
     height: 40px;
     border-radius: 5px;
     overflow: hidden;
     max-width: 400px;
-
+ 
 }
 
 .loading {
@@ -159,7 +158,7 @@ header .menu-list {
     width: 100%;
     height: 93%;
     position: relative;
-    background: rgba(0, 0, 0, 0.534);
+    background: rgba(0, 0, 0, 0.74);
     backdrop-filter: blur(2px);
 }
 
@@ -462,6 +461,9 @@ header .menu-list {
 @media screen and (min-width: 900px) {
     body {
         background-image: url('../img/background.png');
+    }
+    .container-views {
+        background: rgba(0, 0, 0, 0.562);
     }
 
     .proyects {
