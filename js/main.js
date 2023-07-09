@@ -58,6 +58,27 @@ document.getElementById("btn-contact").addEventListener("click", () => {
 CTRL_ANIMATION(views.HOME);
 
 
+document.getElementById('pokedex').addEventListener('click', () =>{
+  window.open('https://github.com/EDCB783/pokedex', '_blank');
+})
+
+document.getElementById('asuna').addEventListener('click', () =>{
+  window.open('https://github.com/EDCB783/asuna-project', '_blank');
+})
+
+document.getElementById('dajji').addEventListener('click', () =>{
+  window.open('https://github.com/EDCB783/dajji', '_blank');
+})
+
+document.getElementById('ags').addEventListener('click', () =>{
+  window.open('https://www.agsauditores.com', '_blank');
+})
+
+document.getElementById('tic-tac-toe').addEventListener('click', () =>{
+  window.open('https://github.com/EDCB783/3-en-raya', '_blank');
+})
+
+
 var form = document.getElementById("my-form");
 
 document.getElementById("contact-form").addEventListener("submit", (e) => {
